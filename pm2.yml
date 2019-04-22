@@ -1,0 +1,14 @@
+apps:
+  - script: ./index.js
+    name: obojobo
+    instances: 2
+    exec_mode: cluster
+    error_file: logs/error.log
+    out_file: logs/out.log
+    max_memory_restart: 100M
+    env:
+      NODE_ENV: production
+      OBO_LTI_SECRET: testsecret
+      OBO_COOKIE_SECRET: NAH
+      DATABASE_URL: postgres://postgres:postgres@127.0.0.1:5432/postgres
+      DEBUG: *
